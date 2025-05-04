@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    /* your CSS here */
+</style>
+
+<div class="container">
+    <h2>Donor Experience</h2>
+    <p style="text-align:center;">Thank you for being a valuable part of our donation community. Here's what our donors say:</p>
+
+    <div class="testimonial">
+        <h4>John Doe</h4>
+        <p>"It feels amazing to know that my donation made a real difference. The process was smooth and transparent!"</p>
+    </div>
+
+    <div class="testimonial">
+        <h4>Jane Smith</h4>
+        <p>"I was updated at every step. It's great to see where your contributions go."</p>
+    </div>
+
+    <div class="testimonial-form">
+        <h3>Share Your Experience</h3>
+        <form method="POST">
+            {% csrf_token %}
+            <textarea name="experience" rows="4" placeholder="Share your experience..."></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% include 'donorexperience.html' %}
+
+
